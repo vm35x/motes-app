@@ -9,7 +9,6 @@ import NoteListHeader from "./NoteListHeader";
 import NoteListItem from "./NoteListItem";
 import NoteListEmptyItem from "./NoteListEmptyItem";
 
-
 export const NoteList = props => {
   return (
     <div>
@@ -32,13 +31,13 @@ export default createContainer(() => {
   Meteor.subscribe("notes");
 
   return {
-    notes: Notes.find()
+    notes: Notes.find({}, { sort: { updatedAt: -1 }})
       .fetch()
       .map(note => {
-          return {
-            ...note,
-            selected: note._id === selectedNoteId
-          }
+        return {
+          ...note,
+          selected: note._id === selectedNoteId
+        };
       })
   };
 }, NoteList);
