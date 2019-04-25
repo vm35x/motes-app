@@ -1,3 +1,12 @@
+// Item List
+.item-list {
+  background: $white;
+  border: 1px solid $grey;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+// Item
 .item {
   background: $item-bg;
   border: 1px solid $item-border;
@@ -5,11 +14,11 @@
   padding: $space;
 }
 
-.item__message{
+.item__message {
   color: $item-text-color;
 }
 
-.item__status-message{
+.item__status-message {
   color: $item-text-color;
   font-style: italic;
   text-align: center;
